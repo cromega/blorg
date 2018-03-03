@@ -1,0 +1,23 @@
+{% raw %}
+<script id="posts_template" type="text/x-handlebars-template">
+  {{#each posts}}
+  <div class="post">
+    <a class="post-link" href="#" data-post-url="{{url}}"><span class="title">{{title}}</span></a>
+    <span class="summary">{{{excerpt}}}</span>
+  </div>
+  {{/each}}
+</script>
+
+<script id="post_template" type="text/x-handlebars-template">
+  <div class="post">
+    <p><span class="title">{{title}}</span></p>
+    <ul>
+    {{#each tags}}
+      <li>{{this}}</li>
+    {{/each}}
+    </ul>
+    <p>{{{content}}}</p>
+  </div>
+</script>
+{% endraw %}
+

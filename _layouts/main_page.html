@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blorg stuff</title>
+    {% include templates.html %}
+    <script type="text/javascript" src="/assets/js/umbrella-2.10.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/handlebars.min.js"></script>
+    <script type="text/javascript" src="/assets/js/blorg.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/assets/style/blorg.css"></style>
+  </head>
+
+  <body>
+    <header>{% include header.html %}</header>
+
+    <div id="posts_container"></div>
+    <div class="hidden" id="post_container"></div>
+
+    <footer>{% include footer.html %}</footer>
+  </body>
+</html>
+
