@@ -20,7 +20,7 @@ var getPosts = function() {
       return;
     }
 
-    u("#posts_container").html(blorgTemplates.posts_template({
+    u("#content").html(blorgTemplates.posts_template({
       posts: body
     }));
 
@@ -38,10 +38,7 @@ var getPost = function(url) {
       return;
     }
 
-    u("#post_container").html(blorgTemplates.post_template(body));
-
-    u("#posts_container").toggleClass("hidden");
-    u("#post_container").toggleClass("hidden");
+    u("#content").html(blorgTemplates.post_template(body));
   })
 }
 
