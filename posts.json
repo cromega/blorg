@@ -2,4 +2,4 @@
 permalink: posts.json
 ---
 
-{{ site.posts | jsonify }}
+{{ site.posts | where_exp:"item", "item.type <> 'page'" | jsonify }}

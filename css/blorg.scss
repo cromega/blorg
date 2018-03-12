@@ -1,6 +1,24 @@
 ---
 ---
 
-.hidden {
-  display: none;
+html {
+  width: 1024px;
+}
+
+body {
+  margin-left: 20%;
+}
+
+header {
+  border-bottom: 2px solid lightgray;
+  margin-bottom: 20px;
+}
+
+#content {
+  float: left;
+  width: 85%;
+}
+
+.clearer {
+  clear: both;
 }
