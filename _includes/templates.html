@@ -1,5 +1,5 @@
 {% raw %}
-<script id="posts_template" type="text/x-handlebars-template">
+<script id="template/posts" type="text/x-handlebars-template">
   {{#each posts}}
   <div class="post">
     <a class="post-link" href="#" data-post-url="{{url}}"><span class="title">{{title}}</span></a>
@@ -8,7 +8,7 @@
   {{/each}}
 </script>
 
-<script id="post_template" type="text/x-handlebars-template">
+<script id="template/post" type="text/x-handlebars-template">
   <div class="post">
     <p><span class="title">{{title}}</span></p>
     <ul>

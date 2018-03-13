@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 var compileTemplates = function() {
-  var templates = ["posts_template", "post_template"];
+  var templates = ["template/posts", "template/post"];
   templates.forEach(function(template) {
     var source = document.getElementById(template).innerHTML;
     blorgTemplates[template] = Handlebars.compile(source);
@@ -20,7 +20,7 @@ var getPosts = function() {
       return;
     }
 
-    u("#content").html(blorgTemplates.posts_template({
+    u("#content").html(blorgTemplates["template/posts"]({
       posts: body
     }));
 
@@ -38,7 +38,7 @@ var getPost = function(url) {
       return;
     }
 
-    u("#content").html(blorgTemplates.post_template(body));
+    u("#content").html(blorgTemplates["template/post"](body));
   })
 }
 
