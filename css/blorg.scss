@@ -14,9 +14,28 @@ header {
   margin-bottom: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
 #content {
   float: left;
   width: 80%;
+  border-right: 2px solid lightgray;
+
+  .tags {
+    color: gray;
+    font-size: 80%;
+
+    ul {
+      list-style-type: none;
+    }
+  }
+
+  .title {
+    font-size: 200%;
+  }
+}
 
 #sidebar {
   float: right;

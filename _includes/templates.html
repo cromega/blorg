@@ -11,11 +11,15 @@
 <script id="template/post" type="text/x-handlebars-template">
   <div class="post">
     <p><span class="title">{{title}}</span></p>
-    <ul>
-    {{#each tags}}
-      <li>{{this}}</li>
-    {{/each}}
-    </ul>
+
+    <div class="tags">
+      <ul>
+      {{#each tags}}
+        <li>{{this}}</li>
+      {{/each}}
+      </ul>
+    </div>
+
     <p>{{{content}}}</p>
   </div>
 </script>
