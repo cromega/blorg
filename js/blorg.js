@@ -2,7 +2,12 @@ var blorgTemplates = {};
 
 document.addEventListener("DOMContentLoaded", function() {
   compileTemplates();
-  getPosts();
+  if (window.location.href.indexOf("#") < 0) {
+    getPosts();
+  } else {
+    var permalink = window.location.href.split("#").pop();
+    getPost(permalink);
+  }
 });
 
 var compileTemplates = function() {
