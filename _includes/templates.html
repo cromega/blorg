@@ -2,15 +2,9 @@
 <script id="template/posts" type="text/x-handlebars-template">
   {{#each posts}}
   <div class="post">
-    <a class="post-link" href="#" data-post-url="{{url}}"><span class="title">{{title}}</span></a>
-    <span class="summary">{{{excerpt}}}</span>
-  </div>
-  {{/each}}
-</script>
-
-<script id="template/post" type="text/x-handlebars-template">
-  <div class="post">
-    <p><span class="title">{{title}}</span></p>
+    <div class="title">
+      <a class="post-link" href="#" data-post-url="{{url}}">{{title}}</a>
+    </div>
 
     <div class="tags">
       <ul>
@@ -19,8 +13,31 @@
       {{/each}}
       </ul>
     </div>
+    <div class="clearer"></div>
 
-    <p>{{{content}}}</p>
+    <div class="summary">
+      {{{excerpt}}}
+    </div>
+  </div>
+  {{/each}}
+</script>
+
+<script id="template/post" type="text/x-handlebars-template">
+  <div class="post">
+    <div class="title">{{title}}</div>
+
+    <div class="tags">
+      <ul>
+      {{#each tags}}
+        <li>{{this}}</li>
+      {{/each}}
+      </ul>
+    </div>
+    <div class="clearer"></div>
+
+    <div class="body">
+      {{{content}}}
+    </div>
   </div>
 </script>
 {% endraw %}

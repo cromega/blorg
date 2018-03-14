@@ -32,17 +32,28 @@ a:hover {
   width: 80%;
   border-right: 2px solid lightgray;
 
+  .title {
+    font-size: 200%;
+  }
+
   .tags {
-    color: gray;
     font-size: 80%;
 
     ul {
+      margin-top: 0px;
+      padding: 0px;
       list-style-type: none;
-    }
-  }
 
-  .title {
-    font-size: 200%;
+      li {
+        float: left;
+        background-color: gray;
+        color: white;
+        border-radius: 5px;
+        margin-right: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
   }
 }
 
