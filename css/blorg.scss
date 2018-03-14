@@ -12,10 +12,19 @@ body {
 header {
   border-bottom: 2px solid lightgray;
   margin-bottom: 20px;
+
+  a, a:hover {
+    color: black;
+  }
 }
 
 a {
   text-decoration: none;
+  color: darkred;
+}
+
+a:hover {
+  color: red;
 }
 
 #content {
