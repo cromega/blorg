@@ -10,6 +10,8 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 3.7.3"
 
+gem "rspec"
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
 end
