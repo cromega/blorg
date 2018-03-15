@@ -34,6 +34,13 @@ a:hover {
 
   .title {
     font-size: 200%;
+    float: left;
+    margin-right: 8px;
+  }
+
+  .post-metadata {
+    font-size: 80%;
+    padding-top: 18px;
   }
 
   .tags {

@@ -6,6 +6,12 @@
       <a class="post-link" href="#" data-post-url="{{url}}">{{title}}</a>
     </div>
 
+    <div class="post-metadata">
+      by <span class="author">{{author}}</span>,
+      <span class="date">{{date}}</span>
+    </div>
+    <div class="clearer"></div>
+
     <div class="tags">
       <ul>
       {{#each tags}}
@@ -25,6 +31,12 @@
 <script id="template/post" type="text/x-handlebars-template">
   <div class="post">
     <div class="title">{{title}}</div>
+
+    <div class="post-metadata">
+      by <span class="author">{{author}}</span>,
+      <span class="date">{{date}}</span>
+    </div>
+    <div class="clearer"></div>
 
     <div class="tags">
       <ul>
