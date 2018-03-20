@@ -2,7 +2,7 @@
 author: cromega
 layout: json
 title: "About"
-permalink: /about.json
+permalink: /about-author.json
 type: page
 ---
 
