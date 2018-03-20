@@ -44,7 +44,7 @@ var getPost = function(url) {
     }
 
     u("#content").html(blorgTemplates["template/post"](body));
-    window.history.pushState("main page", "main page", "#" + body.permalink);
+    window.history.pushState("main page", "main page", "#" + body.url);
   })
 }
 
