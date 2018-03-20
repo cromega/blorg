@@ -1,6 +1,17 @@
 ---
 ---
 
+// style reset
+div {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   width: 1024px;
 }
@@ -31,7 +42,6 @@ a:hover {
   float: left;
   width: 80%;
   border-right: 2px solid lightgray;
-  margin-bottom: 40px;
 
   .title {
     font-size: 200%;
@@ -42,6 +52,7 @@ a:hover {
   .post-metadata {
     font-size: 80%;
     color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
   }
 
   .tags {
@@ -62,6 +73,12 @@ a:hover {
       }
     }
   }
+
+  .body, .summary {
+    p {
+      padding: 8px 0px;
+    }
+  }
 }
 
 #sidebar {
@@ -80,7 +97,11 @@ a:hover {
 }
 
 footer {
+  padding-top: 40px;
+  padding-bottom: 20px;
   font-size: 80%;
+  width: 80%;
+  border-right: 2px solid lightgray;
 }
 
 .clearer {
