@@ -1,6 +1,8 @@
 ---
 ---
 
+$accent: #4170A3;
+
 // style reset
 div {
   line-height: 1;
@@ -32,11 +34,11 @@ header {
 
 a {
   text-decoration: none;
-  color: darkred;
+  color: $accent;
 }
 
 a:hover {
-  color: red;
+  filter: brightness(130%);
 }
 
 #content {
