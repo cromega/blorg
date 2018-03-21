@@ -11,6 +11,7 @@ p {
   padding: 0;
   margin: 0;
 }
+// style reset
 
 html {
   width: 1024px;
@@ -22,7 +23,7 @@ body {
 
 header {
   border-bottom: 2px solid lightgray;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 
   a, a:hover {
     color: black;
@@ -43,10 +44,22 @@ a:hover {
   width: 80%;
   border-right: 2px solid lightgray;
 
+	.post {
+    padding-bottom: 30px;
+    padding-right: 30px;
+
+    .post-separator {
+      margin-top: 50px;
+      margin-left: 30px;
+      border-bottom: 2px lightgray dashed;
+    }
+  }
+
   .title {
     font-size: 200%;
     float: left;
     margin-right: 8px;
+    margin-bottom: 8px;
   }
 
   .post-metadata {
@@ -87,11 +100,19 @@ a:hover {
   width: 15%;
   padding-top: 15px;
 
+  .about-header {
+    padding-bottom: 2px;
+  }
+
   .about-items {
     ul {
       list-style-type: none;
       padding: 0px;
       margin: 0px;
+    }
+
+    li {
+      padding-bottom: 2px;
     }
   }
 }
