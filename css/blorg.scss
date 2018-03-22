@@ -85,9 +85,10 @@ a:hover {
       list-style-type: none;
 
       li {
+        $tagcolour: rgba(0, 0, 0, 0.5);
         float: left;
-        background-color: gray;
-        color: white;
+        color: $tagcolour;
+        border: 1px solid $tagcolour;
         border-radius: 5px;
         margin-right: 2px;
         padding-left: 5px;
