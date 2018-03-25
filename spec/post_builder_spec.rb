@@ -50,7 +50,7 @@ describe PostBuilder do
       it_behaves_like "a document"
     end
 
-    context "when the document is a Jekyll:DocumentDrop" do
+    context "when the document is a Jekyll::DocumentDrop" do
       let(:meta) do
         {
           "author" => "cromega",
