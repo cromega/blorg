@@ -1,5 +1,4 @@
 require "date"
-require "jekyll"
 
 class PostBuilder
   def initialize(post)
