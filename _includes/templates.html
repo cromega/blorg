@@ -51,5 +51,21 @@
     </div>
   </div>
 </script>
+
+<script id="template/sidebar-posts" type="text/x-handlebars-template">
+  <div class="sidebar-header">
+    posts
+  </div>
+
+  <div class="sidebar-items">
+    <ul>
+      {{#each posts}}
+      <li>
+        ⤷<a class="post-link" href="#" data-post-url="{{url}}">{{title}}</a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</script>
 {% endraw %}
 
