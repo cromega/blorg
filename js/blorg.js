@@ -1,7 +1,38 @@
-var blorgTemplates = {};
+var App = function() {
+  var _templates = [];
+  var _initialised = false;
+
+  var _compileTemplates = function() {
+    var templates = ["posts", "post", "sidebar-posts"];
+    templates.forEach(function(name) {
+      template = `template/${name}`
+      var source = document.getElementById(template).innerHTML;
+      _templates[template] = Handlebars.compile(source);
+    });
+  }
+
+  return {
+    init: function() {
+      if (_initialised) {
+        console.log("reinit attempted");
+        return;
+      }
+
+      _compileTemplates();
+      _initialised = true;
+      console.log("init done");
+    },
+    render: function(template, data) {
+      return _templates[`template/${template}`](data);
+    }
+  }
+}
+
+var app;
 
 document.addEventListener("DOMContentLoaded", function() {
-  compileTemplates();
+  app = App();
+  app.init();
 
   if (window.location.href.indexOf("#") < 0) {
     getPosts();
@@ -13,15 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
   updateSidebarLinks("dev");
 });
 
-var compileTemplates = function() {
-  var templates = ["posts", "post", "sidebar-posts"];
-  templates.forEach(function(name) {
-    template = `template/${name}`
-    var source = document.getElementById(template).innerHTML;
-    blorgTemplates[template] = Handlebars.compile(source);
-  });
-}
-
 var getPosts = function() {
   ajax("/posts.json", {}, function(err, body, xhr) {
     if (err) {
@@ -29,9 +51,7 @@ var getPosts = function() {
       return;
     }
 
-    u("#content").html(blorgTemplates["template/posts"]({
-      posts: body
-    }));
+    u("#content").html(app.render("posts", {posts: body}));
 
     u(".post-link").on("click", function(e) {
       var postUrl = u(this).data("post-url");
@@ -47,7 +67,7 @@ var getPost = function(url) {
       return;
     }
 
-    u("#content").html(blorgTemplates["template/post"](body));
+    u("#content").html(app.render("post", body))
     window.history.pushState("main page", "main page", "#" + body.url);
   })
 }
@@ -60,9 +80,7 @@ var updateSidebarLinks = function(category) {
     }
     console.log(body);
 
-    u("#sidebar_post_links").html(blorgTemplates["template/sidebar-posts"]({
-      posts: body
-    }));
+    u("#sidebar_post_links").html(app.render("sidebar-posts", {posts: body}))
 
     u(".post-link").on("click", function(e) {
       var postUrl = u(this).data("post-url");
