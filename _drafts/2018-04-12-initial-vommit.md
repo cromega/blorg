@@ -21,10 +21,12 @@ It's been brewing for a long time. The blog, not the champagne.
 
 After years of working with ~~horrible~~ cutting edge cloud technologies that solve all the problems of every possible client, the need to vent finally became stronger than the general unwillingness to actually set up and run a blog.
 
-There have been earlier attempts but they all failed mostly because I didn't really want to work on a blog hard enough for it to matter to me.
+There have been earlier attempts but they all failed mostly because I didn't really want to work on a blog hard enough to care.
 
-The blog itself is a somewhat peculiar piece of engineering, you can read more about it in the about page. The idea was that in order for me to actually care about it and not to abandon it at the first turn, I would have to put some effort into it.
+The blog itself is a somewhat peculiar piece of engineering, you can read more about it in the about page. The idea was that in order for me to actually care about it and not to abandon it at the first turn, I would have to put some effort in.
 
-Now, creating a blog these days is a pretty mundane task, I had to think hard to come up with ideas that were "unique" enough that implementing them would keep me entertained for a longer period. I think I suceeded.
+Now, creating a blog these days is a pretty mundane task, I had to think hard to come up with ideas that were "unique" enough that implementing them would keep me entertained for a longer period. I think I've suceeded.
 
-Right now it is still a very young specimen, not much more than a markdown document and a few templates. This is probably the high-point of it all. It will go downhill very rapidly from here on in terms of how I want to implement the functionality I would like to see. But hey, that is the point of the whole exercise.
+Right now it is still a very young specimen, not much more than a markdown document and a few templates. This is probably the high-point of it all. It will go downhill very rapidly from here on in terms of how I want to implement the functionality I would like to see. But hey, that's the point of the whole exercise.
+
+Long story short, I will share articles about tech, games, books, food & drinks and other garbage here. The articles are also guaranteed to be politically correct to a certain degree. so trust in Dog and keep your powder dry.
