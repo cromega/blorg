@@ -53,7 +53,7 @@ var getPosts = function() {
 
     u("#content").html(app.render("posts", {posts: body}));
 
-    u(".post-link").on("click", function(e) {
+    u("a[data-post-url]").on("click", function(e) {
       var postUrl = u(this).data("post-url");
       getPost(postUrl);
     })
