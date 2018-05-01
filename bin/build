@@ -1,3 +1,4 @@
 #!/bin/bash -e
 
 bundle exec jekyll build
+docker build -t cromega/thethings .
