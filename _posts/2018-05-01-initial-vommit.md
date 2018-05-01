@@ -2,7 +2,7 @@
 author: cromega
 layout: json
 title: Initial vommit
-date: Thu Apr 12 14:39:10 UTC 2018
+date: Tue May 01 08:18:10 UTC 2018
 permalink: /posts/initial-vommit.json
 tags: [stuff]
 category: dev
