@@ -6,7 +6,7 @@ permalink: /about-author.json
 type: page
 ---
 
-I'm Bence Monus. I solve problems.
+I'm cromega. I solve problems.
 
 According to my work email signature I'm a senior software engineer but it's actually a blatant lie. While I have loads of experience writing backend services in Ruby and Go, it's not how I would describe what I do. What I really do is duct taping the internets together.
 
