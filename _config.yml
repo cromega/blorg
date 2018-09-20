@@ -45,4 +45,5 @@ exclude:
 - README.md
 - nginx.conf
 - Dockerfile
-
+- lib
+- spec
