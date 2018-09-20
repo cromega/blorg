@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
 bundle exec jekyll build
-docker build -t cromega/thethings .
+docker build -t r.cfcr.io/cromega/alphaandcromega .
