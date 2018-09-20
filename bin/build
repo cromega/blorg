@@ -1,4 +1,13 @@
 #!/bin/bash -e
 
 bundle exec jekyll build
-docker build -t r.cfcr.io/cromega/alphaandcromega .
+image="r.cfcr.io/cromega/alphaandcromega"
+docker build -t $image .
+
+echo
+echo push $image?
+read yes
+
+if [ $yes == "y" ]; then
+  docker push $image
+fi
