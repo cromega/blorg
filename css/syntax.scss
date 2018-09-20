@@ -5,8 +5,16 @@
  * Syntax highlighting styles
  * Stolen from https://github.com/jekyll/minima
  */
+
+// in-line code blocks
+p > code {
+  background: #f2f2f2;
+  color: darkred;
+}
+
 .highlight {
-  background: #fff;
+  padding: 5px;
+  background: #eef;
 
   .highlighter-rouge & {
     background: #eef;
