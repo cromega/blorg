@@ -43,4 +43,6 @@ exclude:
 - Gemfile*
 - LICENSE.md
 - README.md
+- nginx.conf
+- Dockerfile
 
