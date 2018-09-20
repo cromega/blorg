@@ -16,7 +16,7 @@ definitely not as snappy as it could be. However, a few tools I started using
 recently shovelled a few more tenths of a second onto the shell startup time
 to the point that it became annoying.
 
-<!--more-->
+<!-- more -->
 
 There's not a whole lot you can do to profile zsh startup but there's a simple way to find the biggest offenders:
 
