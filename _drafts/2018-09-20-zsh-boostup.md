@@ -8,7 +8,7 @@ tags: geek
 category: dev
 ---
 
-## I added these lines to my zshrc and you won't believe what happened next.
+## I added these lines to my zshrc and you won't believe what happened next!
 
 I use [oh my zsh](https://github.com/robbyrussell/oh-my-zsh) with a bunch of
 defaults and a few things of my own. I wouldn't call it bloated but
