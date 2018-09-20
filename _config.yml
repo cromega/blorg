@@ -28,7 +28,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  cromega
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 #theme: minima
 plugins:
 timezone: Europe/London
