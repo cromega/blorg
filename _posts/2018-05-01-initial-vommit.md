@@ -9,7 +9,7 @@ category: dev
 live: true
 ---
 
-## Il serpente mangia una scimmia all'aeroporto.
+## My god, it's full of letters.
 
 And with this important statement I would like to take the opportunity to grab the figurative bottle of champagne and toss it at this blog.
 
