@@ -11,10 +11,10 @@ category: dev
 ## I added these lines to my zshrc and you won't believe what happened next!
 
 I use [oh my zsh](https://github.com/robbyrussell/oh-my-zsh) with a bunch of
-defaults and a few things of my own. I wouldn't call it bloated but
+defaults and a few things of my own. I wouldn't call my config bloated but it's
 definitely not as snappy as it could be. However, a few tools I started using
-recently shovelled a few more tenths of a second onto the shell startup time
-to the point that it became annoying.
+recently shovelled a few more tenths of a second onto the shell startup time to
+the point that it became annoying.
 
 <!-- more -->
 
