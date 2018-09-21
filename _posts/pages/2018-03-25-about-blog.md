@@ -14,6 +14,6 @@ The UI is some home-baked Javascript garbage that fetches the articles that are 
 
 Why?
 
-I have no idea so here's a bunny with a pancake on its head.
+Just because.
 
 The blog is running on my little personal PaaS, which is a tiny Docker Swarm cluster with some extra plumbing to allow hostname based routing to containers (using [Traefik](https://traefik.io)) and other things. More info on it in an article a bit later
