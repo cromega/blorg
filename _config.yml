@@ -16,31 +16,24 @@
 author:
   name: Bence Monus
   handle: cromega
-  email: crome@moronia.hu
 
 title: The alpha and the cromega
 email: crome@moronia.hu
-description: >- # this means to ignore newlines until "baseurl:"
-  Blorg stuff description
+description: This is where I rant about things.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: cromega
-github_username:  cromega
 
 # Build settings
 markdown: redcarpet
 #theme: minima
 plugins:
 timezone: Europe/London
+excerpt_separator: "<!-- more -->"
 
 sass:
   style: compact
 
-excerpt_separator: "<!-- more -->"
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
 exclude:
 - bin
 - Gemfile*
