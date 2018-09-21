@@ -42,7 +42,7 @@ excerpt_separator: "<!-- more -->"
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
-- "bin"
+- bin
 - Gemfile*
 - LICENSE.md
 - README.md
