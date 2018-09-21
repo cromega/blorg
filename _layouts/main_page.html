@@ -11,13 +11,13 @@
   </head>
 
   <body>
-    <header>{% include header.html %}</header>
+    {% include header.html %}
 
     <div id="content">{{content}}</div>
     <div id="sidebar">{% include sidebar.html %}</div>
     <div class="clearer"></div>
 
-    <footer>{% include footer.html %}</footer>
+    {% include footer.html %}
   </body>
 </html>
 
