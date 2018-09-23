@@ -3,6 +3,20 @@ var App = function() {
   var _initialised = false;
   var _history = [];
 
+  var _init = function() {
+    if (_initialised) {
+      console.log("reinit attempted");
+      return;
+    }
+
+    _compileTemplates();
+    window.onpopstate = function(event) {
+      _goBack();
+    };
+    _initialised = true;
+    console.log("init done");
+  }
+
   var _compileTemplates = function() {
     var templates = ["posts", "post", "sidebar-posts"];
     templates.forEach(function(name) {
@@ -41,19 +55,7 @@ var App = function() {
   }
 
   return {
-    init: function() {
-      if (_initialised) {
-        console.log("reinit attempted");
-        return;
-      }
-
-      _compileTemplates();
-      window.onpopstate = function(event) {
-        _goBack();
-      };
-      _initialised = true;
-      console.log("init done");
-    },
+    init: _init,
     render: _render,
     getPost: _getPost,
   }
