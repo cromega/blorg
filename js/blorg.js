@@ -17,12 +17,10 @@ var App = function() {
     var hist = _history.pop();
 
     if (hist.indexOf("#") > -1) {
-      console.log("getting", hist);
       _getPost(hist.replace("#", ""), pushHistory = false);
     } else {
       getPosts();
     }
-    console.log(_history);
   };
 
   var _render = function(template, data) {
@@ -36,7 +34,6 @@ var App = function() {
       u("#content").html(_render("post", data))
       if (pushHistory) {
         _history.push(window.location.href);
-        console.log(_history);
         window.history.pushState({previousPage: window.location.href}, "", "#" + url);
       }
     })
