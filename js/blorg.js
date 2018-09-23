@@ -1,6 +1,7 @@
 var App = function() {
   var _templates = [];
   var _initialised = false;
+  var _history = [];
 
   var _compileTemplates = function() {
     var templates = ["posts", "post", "sidebar-posts"];
@@ -11,6 +12,37 @@ var App = function() {
     });
   }
 
+  var _goBack = function() {
+    if (_history.length == 0) {return;}
+    var hist = _history.pop();
+
+    if (hist.indexOf("#") > -1) {
+      console.log("getting", hist);
+      _getPost(hist.replace("#", ""), pushHistory = false);
+    } else {
+      getPosts();
+    }
+    console.log(_history);
+  };
+
+  var _render = function(template, data) {
+    return _templates[`template/${template}`](data);
+  }
+
+  _getPost = function(url, pushHistory = true) {
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      u("#content").html(_render("post", data))
+      if (pushHistory) {
+        _history.push(window.location.href);
+        console.log(_history);
+        window.history.pushState({previousPage: window.location.href}, "", "#" + url);
+      }
+    })
+    .catch(err => console.log(err));
+  }
+
   return {
     init: function() {
       if (_initialised) {
@@ -19,12 +51,14 @@ var App = function() {
       }
 
       _compileTemplates();
+      window.onpopstate = function(event) {
+        _goBack();
+      };
       _initialised = true;
       console.log("init done");
     },
-    render: function(template, data) {
-      return _templates[`template/${template}`](data);
-    }
+    render: _render,
+    getPost: _getPost,
   }
 }
 
@@ -38,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
     getPosts();
   } else {
     var permalink = window.location.href.split("#").pop();
-    getPost(permalink);
+    app.getPost(permalink);
   }
 
   updateSidebarLinks("dev");
@@ -50,22 +84,13 @@ var getPosts = function() {
   .then(data => {
     u("#content").html(app.render("posts", {posts: data}));
 
-    u("a[data-post-url]").on("click", function(e) {
+    u("#content a[data-post-url]").off("click").on("click", function(e) {
+      e.preventDefault();
       var postUrl = u(this).data("post-url");
-      getPost(postUrl);
+      app.getPost(postUrl);
     })
   })
   .catch(err => console.log(err))
-}
-
-var getPost = function(url) {
-  fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    u("#content").html(app.render("post", data))
-    window.history.pushState("main page", "main page", "#" + data.url);
-  })
-  .catch(err => console.log(err));
 }
 
 var updateSidebarLinks = function(category) {
@@ -74,9 +99,10 @@ var updateSidebarLinks = function(category) {
   .then(data => {
     u("#sidebar_post_links").html(app.render("sidebar-posts", {posts: data}))
 
-    u(".post-link").on("click", function(e) {
+    u("#sidebar .post-link").off("click").on("click", function(e) {
+      e.preventDefault();
       var postUrl = u(this).data("post-url");
-      getPost(postUrl);
+      app.getPost(postUrl);
     });
   })
   .catch(err => console.log(err));
