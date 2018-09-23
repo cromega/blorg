@@ -1,30 +1,14 @@
-var App = function() {
-  var _templates = [];
-  var _initialised = false;
+var App = function(page) {
+  var _page = page;
   var _history = [];
+  var _templates = {};
+  ["posts", "post", "sidebar-posts"].forEach(function(template) {
+    var name = `template/${template}`
+    var source = _page.getElementById(name).innerHTML;
+    _templates[name] = Handlebars.compile(source);
+  });
 
-  var _init = function() {
-    if (_initialised) {
-      console.log("reinit attempted");
-      return;
-    }
-
-    _compileTemplates();
-    window.onpopstate = function(event) {
-      _goBack();
-    };
-    _initialised = true;
-    console.log("init done");
-  }
-
-  var _compileTemplates = function() {
-    var templates = ["posts", "post", "sidebar-posts"];
-    templates.forEach(function(name) {
-      template = `template/${name}`
-      var source = document.getElementById(template).innerHTML;
-      _templates[template] = Handlebars.compile(source);
-    });
-  }
+  window.addEventListener("popstate", function() { _goBack(); });
 
   var _goBack = function() {
     if (_history.length == 0) {return;}
@@ -55,7 +39,6 @@ var App = function() {
   }
 
   return {
-    init: _init,
     render: _render,
     getPost: _getPost,
   }
@@ -64,8 +47,7 @@ var App = function() {
 var app;
 
 document.addEventListener("DOMContentLoaded", function() {
-  app = App();
-  app.init();
+  app = new App(document);
 
   if (window.location.href.indexOf("#") < 0) {
     getPosts();
