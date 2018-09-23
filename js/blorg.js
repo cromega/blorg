@@ -45,47 +45,40 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 var getPosts = function() {
-  ajax("/posts.json", {}, function(err, body, xhr) {
-    if (err) {
-      console.log(err);
-      return;
-    }
-
-    u("#content").html(app.render("posts", {posts: body}));
+  fetch("/posts.json")
+  .then(response => response.json())
+  .then(data => {
+    u("#content").html(app.render("posts", {posts: data}));
 
     u("a[data-post-url]").on("click", function(e) {
       var postUrl = u(this).data("post-url");
       getPost(postUrl);
     })
-  });
+  })
+  .catch(err => console.log(err))
 }
 
 var getPost = function(url) {
-  ajax(url, {}, function(err, body, xhr) {
-    if (err) {
-      console.log(err);
-      return;
-    }
-
-    u("#content").html(app.render("post", body))
-    window.history.pushState("main page", "main page", "#" + body.url);
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    u("#content").html(app.render("post", data))
+    window.history.pushState("main page", "main page", "#" + data.url);
   })
+  .catch(err => console.log(err));
 }
 
 var updateSidebarLinks = function(category) {
-  ajax(`/categories/${category}.json`, {}, function(err, body, _) {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    console.log(body);
-
-    u("#sidebar_post_links").html(app.render("sidebar-posts", {posts: body}))
+  fetch(`/categories/${category}.json`)
+  .then(response => response.json())
+  .then(data => {
+    u("#sidebar_post_links").html(app.render("sidebar-posts", {posts: data}))
 
     u(".post-link").on("click", function(e) {
       var postUrl = u(this).data("post-url");
       getPost(postUrl);
-    })
-  });
+    });
+  })
+  .catch(err => console.log(err));
 }
 
