@@ -11,7 +11,14 @@ source "https://rubygems.org"
 gem "jekyll", "~> 3.8.0"
 gem "redcarpet"
 
-gem "rspec"
+group :test do
+  gem "rspec"
+  gem "sinatra"
+  gem "capybara"
+  gem "pry-nav"
+  gem "chromedriver-helper"
+  gem "selenium-webdriver"
+end
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
