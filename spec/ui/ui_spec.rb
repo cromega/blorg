@@ -10,7 +10,7 @@ describe "The Blorg:", type: :feature, js: true do
 
   describe "opening a permalink" do
     before do
-      visit "#/posts/test-post.json"
+      visit "#/posts/test-post/"
     end
 
     it "shows the post" do
@@ -29,7 +29,7 @@ describe "The Blorg:", type: :feature, js: true do
     end
 
     it "adds the permalink fragment to the current address" do
-      expect(URI.parse(page.current_url).fragment).to eq "/posts/test-post.json"
+      expect(URI.parse(page.current_url).fragment).to eq "/posts/test-post/"
     end
   end
 
@@ -42,7 +42,7 @@ describe "The Blorg:", type: :feature, js: true do
 
     it "follows the history correctly" do
       page.driver.go_back
-      expect(URI.parse(page.current_url).fragment).to eq "/posts/test-post.json"
+      expect(URI.parse(page.current_url).fragment).to eq "/posts/test-post/"
       expect(page).to have_content "Test markdown article"
 
       page.driver.go_back

@@ -22,8 +22,9 @@ class Blog < Sinatra::Base
   set :static, true
   set :public_folder, settings.root
 
-  get "/" do
-    File.read("#{settings.root}/index.html")
+  get "*" do
+    path = params["splat"].first
+    File.read("#{settings.root}/#{path}/index.html")
   end
 end
 

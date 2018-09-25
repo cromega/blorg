@@ -9,7 +9,7 @@ author: cromega
 layout: json
 title: ${title}
 date: $(date -u)
-permalink: /posts/${slug}.json
+permalink: /posts/${slug}/
 tags: [ADD, TAGS]
 category: dev
 ---" > "_drafts/${fn}"
