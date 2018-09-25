@@ -2,9 +2,19 @@ require "ui/ui_spec_helper"
 
 describe "The Blorg:", type: :feature, js: true do
   describe "The main page" do
-    it "loads the articles" do
+    it "shows the summaries" do
       visit "/"
-      expect(page).to have_content "Test markdown article"
+      expect(page).to have_content "Read the whole thing!"
+    end
+  end
+
+  describe "opening a permalink" do
+    before do
+      visit "#/posts/test-post.json"
+    end
+
+    it "shows the post" do
+      expect(page).to have_content "More test text"
     end
   end
 
