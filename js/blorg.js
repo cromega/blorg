@@ -26,10 +26,15 @@ var App = function(page) {
   }
 
   _getPost = function(url, pushHistory = true) {
+    if (url.endsWith(".json")) {
+      url = url.replace("\.json", "/");
+    }
+
     fetch(url)
     .then(response => response.json())
     .then(data => {
       u("#content").html(_render("post", data))
+
       if (pushHistory) {
         _history.push(window.location.href);
         window.history.pushState({previousPage: window.location.href}, "", "#" + url);

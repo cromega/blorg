@@ -9,12 +9,23 @@ describe "The Blorg:", type: :feature, js: true do
   end
 
   describe "opening a permalink" do
+    let(:url) { "#/posts/test-post/" }
+
     before do
-      visit "#/posts/test-post/"
+      visit url
     end
 
     it "shows the post" do
       expect(page).to have_content "More test text"
+    end
+
+    context "when the permalink is direct link to json" do
+      let(:url) { "#/posts/test-post.json" }
+      it "sets the address to the correct folder url" do
+        visit "#/posts/test-post.json"
+        sleep 0.2
+        expect(URI.parse(page.current_url).fragment).to eq "/posts/test-post/"
+      end
     end
   end
 
@@ -42,10 +53,12 @@ describe "The Blorg:", type: :feature, js: true do
 
     it "follows the history correctly" do
       page.driver.go_back
+      sleep 0.2
       expect(URI.parse(page.current_url).fragment).to eq "/posts/test-post/"
       expect(page).to have_content "Test markdown article"
 
       page.driver.go_back
+      sleep 0.2
       expect(URI.parse(page.current_url).fragment).to eq nil
       expect(page).to have_content "Read the whole thing!"
     end
