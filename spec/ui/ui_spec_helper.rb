@@ -7,6 +7,8 @@ require "pry"
 require "fileutils"
 require "selenium-webdriver"
 
+Dir[File.dirname(__FILE__) + "/support/*.rb"].each { |lib| require lib }
+
 Capybara.register_driver :firefox_headless do |app|
   capabilities = ::Selenium::WebDriver::Remote::Capabilities.chrome(
     chromeOptions: { args: %w(headless disable-gpu) }
@@ -33,14 +35,15 @@ Capybara.app = Blog
 
 RSpec.configure do |config|
   config.before :suite do
-    File.write("_drafts/test-article.md", File.read("spec/ui/fixtures/test-article.md") % DateTime.now.strftime("%a %b %d %H:%M:%S %Z %Y"))
+    TestRunPrepare.new.tap do |prepare|
+      prepare.create_test_post
+      prepare.build_content
+    end
 
-    `bundle exec jekyll clean`
-    `bundle exec jekyll build --drafts`
     Blog.run
   end
 
   config.after :suite do
-    FileUtils.rm "_drafts/test-article.md"
+    TestRunPrepare.clean_up
   end
 end
