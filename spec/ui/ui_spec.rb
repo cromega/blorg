@@ -23,7 +23,7 @@ describe "The Blorg:", type: :feature, js: true do
       let(:url) { "#/posts/test-post.json" }
       it "sets the address to the correct folder url" do
         visit "#/posts/test-post.json"
-        sleep 0.2
+        sleep 0.3
         expect(URI.parse(page.current_url).fragment).to eq "/posts/test-post/"
       end
     end
@@ -53,7 +53,7 @@ describe "The Blorg:", type: :feature, js: true do
 
     it "follows the history correctly" do
       page.driver.go_back
-      sleep 0.2
+      sleep 0.3
       expect(URI.parse(page.current_url).fragment).to eq "/posts/test-post/"
       expect(page).to have_content "Test markdown article"
 
