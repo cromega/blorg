@@ -33,7 +33,7 @@ Capybara.app = Blog
 
 RSpec.configure do |config|
   config.before :suite do
-    FileUtils.cp "spec/ui/fixtures/test-article.md", "_drafts"
+    File.write("_drafts/test-article.md", File.read("spec/ui/fixtures/test-article.md") % DateTime.now.strftime("%a %b %d %H:%M:%S %Z %Y"))
 
     `bundle exec jekyll clean`
     `bundle exec jekyll build --drafts`
@@ -41,6 +41,6 @@ RSpec.configure do |config|
   end
 
   config.after :suite do
-		FileUtils.rm "_drafts/test-article.md"
+    FileUtils.rm "_drafts/test-article.md"
   end
 end

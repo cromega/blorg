@@ -2,7 +2,7 @@
 author: cromega
 layout: json
 title: test post
-date: Mon Sept 26 14:00:00 UTC 2018
+date: %s
 permalink: /posts/test-post/
 tags: [test, tag]
 category: test
