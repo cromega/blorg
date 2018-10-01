@@ -57,7 +57,6 @@ RSpec.configure do |config|
 
     `bundle exec jekyll clean`
     `bundle exec jekyll build --drafts`
-    Blog.run
   end
 
   config.after :suite do
