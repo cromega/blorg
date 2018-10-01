@@ -61,7 +61,7 @@ RSpec.configure do |config|
   end
 
   config.after :suite do
-		FileUtils.rm "_drafts/test-article.md"
+    FileUtils.rm "_drafts/test-article.md"
   end
 end
 ```
