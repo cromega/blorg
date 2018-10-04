@@ -17,7 +17,7 @@ var App = function(page) {
     if (hist.indexOf("#") > -1) {
       _getPost(hist.replace("#", ""), pushHistory = false);
     } else {
-      getPosts();
+      getPosts("dev");
     }
   };
 
@@ -54,8 +54,12 @@ var app;
 document.addEventListener("DOMContentLoaded", function() {
   app = new App(document);
 
+  u(".cat-logo").on("click", function(e) {
+    switchCategory(u(e.currentTarget).attr("alt"));
+  });
+
   if (window.location.href.indexOf("#") < 0) {
-    getPosts();
+    getPosts("dev");
   } else {
     var permalink = window.location.href.split("#").pop();
     app.getPost(permalink);
@@ -64,8 +68,13 @@ document.addEventListener("DOMContentLoaded", function() {
   updateSidebarLinks("dev");
 });
 
-var getPosts = function() {
-  fetch("/posts.json")
+var switchCategory = function(cat) {
+  getPosts(cat);
+  updateSidebarLinks(cat);
+}
+
+var getPosts = function(cat) {
+  fetch(`/categories/${cat}.json`)
   .then(response => response.json())
   .then(data => {
     u("#content").html(app.render("posts", {posts: data}));
