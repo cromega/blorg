@@ -6,6 +6,7 @@ require "sinatra/base"
 require "pry"
 require "fileutils"
 require "selenium-webdriver"
+require "chromedriver-helper"
 
 Dir[File.dirname(__FILE__) + "/support/*.rb"].each { |lib| require lib }
 
