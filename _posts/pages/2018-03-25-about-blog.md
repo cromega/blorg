@@ -16,4 +16,4 @@ Why?
 
 Just because.
 
-The blog is running on my little personal PaaS, which is a tiny Docker Swarm cluster with some extra plumbing to allow hostname based routing to containers (using [Traefik](https://traefik.io)) and other things. More info on it in an article a bit later
+The blog is running on my little personal PaaS, which is a tiny Docker Swarm cluster with some extra plumbing to allow hostname based routing to containers (using [Traefik](https://traefik.io)) and other things. More info on it in an article a bit later.
