@@ -11,7 +11,7 @@ category: dev
 ## Ever wanted to set GOPATH on fire? Now you can.
 
 Google finally decided - quite commendably - that ~7 years of rage against the
-conventions to organise Go code was enough. Golang 11 introduced a new feature
+conventions to organise Go code was enough. Golang 1.11 introduced a new feature
 called modules, experimental for now, which is to supercede the GOPATH based
 approach.
 
