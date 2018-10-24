@@ -34,18 +34,46 @@ go mod init github.com/cromega/keyguard
 
 Et voilà. &#x1f44d;
 
-`go.mod` was created with some dependency information in it. Now let's see if it
-works:
+`go.mod` was created with some dependency information in it.
+
+```
+module github.com/cromega/keyguard
+
+require github.com/GeertJohan/yubigo v0.0.0-20140521141543-b1764f04aa9b
+```
+
+More about the version notation a bit later. Let's see if it works:
 
 ```sh
 unset GOPATH
+go mod download # if you add deps
 go test
 go build
 ```
 
-Notice that running the tests or building will create an additional file,
-`go.sum`. This file contains cryptographic checksums of the dependencies and
-should also be version controlled.
+Notice that there's an additional file, `go.sum`. This file contains
+cryptographic checksums of the dependencies and should also be version
+controlled.
+
+## Using the module file
+
+Adding a new dependency is an extra line in the mod file:
+
+```
+require "github.com github.com/julienschmidt/httprouter v1.2.0"
+```
+
+Go is fussy about versions, you can really only import projects that have valid
+`semver` tags. If you want to require a commit you can specify a
+"pseudo-version" which has the following syntax `v0.0.0-yyyymmddhhmmss-commit`
+
+```
+require "github.com/foo/bar
+v0.0.0-20181024000000-348b672cd90d8190f8240323e372ecd1e66b59dc
+```
+
+The timestamp in the middle can be the date of the commit, the date the
+dependency was added or all 0s if you don't care.
 
 ## Vendoring
 
