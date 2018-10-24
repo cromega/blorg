@@ -60,7 +60,7 @@ controlled.
 Adding a new dependency is an extra line in the mod file:
 
 ```
-require "github.com github.com/julienschmidt/httprouter v1.2.0"
+require "github.com/julienschmidt/httprouter v1.2.0"
 ```
 
 Go is fussy about versions, you can really only import projects that have valid
