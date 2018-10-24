@@ -1,10 +1,9 @@
 ---
 author: cromega
 layout: json
-title: go go modules
-date: Fri Oct 19 10:49:50 UTC 2018
+title: Go Go modules
 permalink: /posts/go-go-modules/
-tags: [ADD, TAGS]
+tags: [geek]
 category: dev
 ---
 
