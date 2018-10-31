@@ -4,6 +4,7 @@ layout: json
 title: "The blog"
 permalink: /about-blog/
 type: page
+feed: false
 ---
 
 This blog is based on a horrible idea. Multiple horrible ideas, to be precise.

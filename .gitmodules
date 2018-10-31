@@ -1,0 +1,3 @@
+[submodule "vendor/jekyll-feed"]
+	path = vendor/jekyll-feed
+	url = https://github.com/cromega/jekyll-feed

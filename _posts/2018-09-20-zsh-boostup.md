@@ -4,6 +4,7 @@ layout: json
 title: zsh boostup
 date: Thu Sep 20 09:15:44 UTC 2018
 permalink: /posts/zsh-boostup/
+feed_link: "#/posts/zsh-boostup/"
 tags: geek
 category: dev
 ---

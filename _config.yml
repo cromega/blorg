@@ -17,7 +17,7 @@ author:
   name: Bence Monus
   handle: cromega
 
-title: The alpha and the cromega
+title: The α and the cromega
 email: crome@moronia.hu
 description: This is where I rant about things.
 baseurl: "/" # the subpath of your site, e.g. /blog
@@ -27,6 +27,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: redcarpet
 #theme: minima
 plugins:
+  - jekyll-feed
 timezone: Europe/London
 excerpt_separator: "<!-- more -->"
 
@@ -43,3 +44,4 @@ exclude:
 - Dockerfile
 - lib
 - spec
+- vendor/

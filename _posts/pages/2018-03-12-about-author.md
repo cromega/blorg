@@ -4,6 +4,7 @@ layout: json
 title: About me
 permalink: /about-author/
 type: page
+feed: false
 ---
 
 I'm [cromega](https://github.com/cromega). I solve problems.

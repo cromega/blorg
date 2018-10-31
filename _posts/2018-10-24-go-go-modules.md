@@ -3,6 +3,7 @@ author: cromega
 layout: json
 title: Go Go modules
 permalink: /posts/go-go-modules/
+feed_link: "#/posts/go-go-modules/"
 tags: [geek]
 category: dev
 ---

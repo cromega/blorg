@@ -1,3 +1,9 @@
+PATH
+  remote: vendor/jekyll-feed
+  specs:
+    jekyll-feed (0.11.0)
+      jekyll (~> 3.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -121,6 +127,7 @@ DEPENDENCIES
   capybara
   chromedriver-helper
   jekyll (~> 3.8.0)
+  jekyll-feed!
   pry-nav
   redcarpet
   rspec

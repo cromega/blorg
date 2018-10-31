@@ -22,4 +22,5 @@ end
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+  gem "jekyll-feed", path: "vendor/jekyll-feed"
 end

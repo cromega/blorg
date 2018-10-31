@@ -4,6 +4,7 @@ layout: json
 title: Testing static sites locally
 date: Tue Sep 25 15:22:49 UTC 2018
 permalink: /posts/testing-static-sites-locally/
+feed_link: "#/posts/testing-static-sites-locally/"
 tags: [geek]
 category: dev
 ---
