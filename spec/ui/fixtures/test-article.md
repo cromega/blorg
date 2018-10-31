@@ -5,7 +5,7 @@ title: test post
 date: %s
 permalink: /posts/test-post/
 tags: [test, tag]
-category: test
+category: dev
 live: true
 ---
 
