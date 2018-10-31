@@ -47,7 +47,9 @@ describe "The Blorg:", type: :feature, js: true do
   describe "navigating backwards after visiting articles" do
     before do
       visit "/"
-      click_on("test post")
+      within "#content" do
+        click_on("test post")
+      end
       click_on("the author")
     end
 
