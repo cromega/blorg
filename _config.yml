@@ -21,7 +21,7 @@ title: The α and the cromega
 email: crome@moronia.hu
 description: This is where I rant about things.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://alphaandcromega.sublimia.nl" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: redcarpet
