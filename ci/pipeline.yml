@@ -38,9 +38,11 @@ jobs:
 - name: preview
   plan:
   - get: blog
+    trigger: true
     passed: [build]
   - put: deployer
     params:
+      image: cromega/blog
       service: test-alphaandcromega
       service_opts: blog/ci/service.opts
 - name: live
