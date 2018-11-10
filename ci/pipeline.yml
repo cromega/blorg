@@ -1,0 +1,53 @@
+resource_types:
+- name: sublimia-deployer
+  type: docker-image
+  source:
+    repository: cromega/sublimia-concourse-deploy
+    tag: latest
+
+resources:
+- name: blog
+  type: git
+  source:
+    uri: git@github.com:cromega/blorg
+    private_key: {{blorg-deploy-key}}
+    submodules: all
+- name: image
+  type: docker-image
+  source:
+    repository: cromega/blog
+    username: cromega
+    password: {{dockerhub-password}}
+- name: deployer
+  type: sublimia-deployer
+  source:
+    host: master.sublimia.nl
+    port: 6678
+    private_key: {{deployer-private-key}}
+
+jobs:
+- name: build
+  plan:
+  - get: blog
+    trigger: true
+  - task: build
+    file: blog/ci/build.yml
+  - put: image
+    params:
+      build: blog-rendered/
+- name: preview
+  plan:
+  - get: blog
+    passed: [build]
+  - put: deployer
+    params:
+      service: test-alphaandcromega
+      service_opts: blog/ci/service.opts
+- name: live
+  plan:
+  - get: blog
+    passed: [preview]
+  - put: deployer
+    params:
+      service: alphaandcromega
+      service_opts: blog/ci/service.opts
