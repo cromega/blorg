@@ -1,0 +1,5 @@
+--limit-memory 64M
+--label traefik.enable=true
+--label traefik.port=80
+--network web
+r.cfcr.io/cromega/alphaandcromega
