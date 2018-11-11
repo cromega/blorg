@@ -51,5 +51,6 @@ jobs:
     passed: [preview]
   - put: deployer
     params:
+      image: cromega/blog
       service: alphaandcromega
       service_opts: blog/ci/service.opts
