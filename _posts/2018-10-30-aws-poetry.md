@@ -15,7 +15,7 @@ I was playing around with AWS EKS when a somewhat cryptic error message hit me.
 
 <!-- more -->
 
-What I was actually doing was trying to understand how the tool that provides a session token for kubectl works. FYI, the flow uses [this tool](https://github.com/kubernetes-sigs/aws-iam-authenticator).
+What I was actually doing is trying to understand how the tool that provides a session token for kubectl works. FYI, the flow uses [this tool](https://github.com/kubernetes-sigs/aws-iam-authenticator).
 As I executed the command I got this well-crafted chain of errors:
 
 ```
