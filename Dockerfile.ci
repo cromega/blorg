@@ -1,4 +1,4 @@
-FROM ruby:2.5slim
+FROM ruby:2.5-slim
 
 COPY Gemfile* /
 
