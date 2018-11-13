@@ -47,7 +47,7 @@ jobs:
   - put: ci-image
     params:
       build: blog/
-      dockerfile: Dockerfile.ci
+      dockerfile: blog/Dockerfile.ci
 - name: build
   serial_groups: [ci-image-build]
   plan:
