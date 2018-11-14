@@ -18,7 +18,6 @@ resources:
     uri: git@github.com:cromega/blorg
     private_key: {{blorg-deploy-key}}
     paths: [Gemfile.lock, Dockerfile.ci]
-
 - name: ci-image
   type: docker-image
   source:
@@ -46,8 +45,8 @@ jobs:
     trigger: true
   - put: ci-image
     params:
-      build: blog/
-      dockerfile: blog/Dockerfile.ci
+      build: blog-deps/
+      dockerfile: blog-deps/Dockerfile.ci
 - name: build
   serial_groups: [ci-image-build]
   plan:
