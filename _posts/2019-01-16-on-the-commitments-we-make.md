@@ -2,7 +2,7 @@
 author: cromega
 layout: json
 title: on the commitments we make
-date: Wed Dec 19 16:46:47 UTC 2018
+date: Wed Jan 16 18:10:47 UTC 2019
 permalink: /posts/on-the-commitments-we-make/
 tags: [geek]
 category: dev
