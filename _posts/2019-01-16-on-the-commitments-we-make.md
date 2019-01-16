@@ -52,11 +52,10 @@ egg:
 - eggplant
 ```
 
-I got curious and I did the first sensible thing: `git blame`. I didn't have
-high hopes as I expected to find something along the lines of `add search
-exclude configuration`, or `add eggplant to search excludes` or, even `add
-ALL the things` (but that's silly, no one commits with a message like that,
-right?)
+I got curious so I started poking. I didn't have high hopes as I expected to
+find something along the lines of `add search exclude configuration`, or `add
+eggplant to search excludes` or, even `add ALL the things` (but that's silly,
+no one commits with a message like that, right?)
 
 Much to my surprise, this is what I found:
 
@@ -71,4 +70,4 @@ And this, my friend, is a commit message. Now I know the following:
 * It works by listing a word and all the items that need to be excluded for that search
 
 If in a year's time someone has to find out why this file exists they can just
-run git blame and they will immediately know.
+look at the git history and say: a-ha!
