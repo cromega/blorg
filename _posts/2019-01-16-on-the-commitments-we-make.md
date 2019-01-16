@@ -35,7 +35,7 @@ important answering the **why** becomes. A chunkier commit can usually be
 neatly summed up with something that says which feature the change was part
 of. But take a commit for example, a file move. If you run git blame you
 probably want to find out something about that operation. Would `move file`
-explain anyting? I can see that a file was moved from a folder to another
+explain anything? I can see that a file was moved from a folder to another
 one. Why was it moved? Does it need to be in that folder for some reason? Can
 I move it back or somewhere else?
 
@@ -52,10 +52,10 @@ egg:
 - eggplant
 ```
 
-I got curious so I started poking. I didn't have high hopes as I expected to
-find something along the lines of `add search exclude configuration`, or `add
-eggplant to search excludes` or, even `add ALL the things` (but that's silly,
-no one commits with a message like that, right?)
+I got curious so I started poking around. I didn't have high hopes as I
+expected to find something along the lines of `add search exclude
+configuration`, or `add eggplant to search excludes` or, even `add ALL the
+things` (but that's silly, no one commits with a message like that, right?)
 
 Much to my surprise, this is what I found:
 
