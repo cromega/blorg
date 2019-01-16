@@ -31,9 +31,13 @@ Generally, there are 2 things I expect a commit message to communicate:
 * why adding/modifying/deleting that code was necessary
 
 In my experience the smaller and more specific the commit is, the more
-important the reason becomes. I can see that a file was moved from a folder
-to another one. Why was it moved? Does it need to be in that folder for some
-reason? Can I move it back or somewhere else?
+important answering the **why** becomes. A chunkier commit can usually be
+neatly summed up with something that says which feature the change was part
+of. But take a commit for example, a file move. If you run git blame you
+probably want to find out something about that operation. Would `move file`
+explain anyting? I can see that a file was moved from a folder to another
+one. Why was it moved? Does it need to be in that folder for some reason? Can
+I move it back or somewhere else?
 
 The perfect commit message tells us both about what and why.
 
