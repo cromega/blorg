@@ -1,24 +1,18 @@
 require "spec_helper"
 
-require "capybara"
 require "capybara/rspec"
+require "capybara/apparition"
 require "sinatra/base"
 require "pry"
 require "fileutils"
-require "selenium-webdriver"
-require "chromedriver-helper"
+
+Capybara.register_driver :apparition do |app|
+  options = {headless: !(ENV["HEADLESS"] == "false")}
+  Capybara::Apparition::Driver.new(app, options)
+end
+Capybara.javascript_driver = :apparition
 
 Dir[File.dirname(__FILE__) + "/support/*.rb"].each { |lib| require lib }
-
-Capybara.register_driver :firefox_headless do |app|
-  capabilities = ::Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w(headless disable-gpu) }
-  )
-
-  Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: capabilities)
-end
-
-Capybara.javascript_driver = :firefox_headless
 
 class Blog < Sinatra::Base
   set :root, "_site"

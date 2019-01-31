@@ -16,8 +16,7 @@ group :test do
   gem "sinatra"
   gem "capybara"
   gem "pry-nav"
-  gem "chromedriver-helper"
-  gem "selenium-webdriver"
+  gem "apparition", "0.0.6"
 end
 
 # If you have any plugins, put them here!
