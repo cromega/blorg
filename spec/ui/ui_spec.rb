@@ -22,7 +22,7 @@ describe "The Blorg:", type: :feature, js: true do
     context "when the permalink is direct link to json" do
       let(:url) { "#/posts/test-post.json" }
       it "sets the address to the correct folder url" do
-        visit "#/posts/test-post.json"
+        visit url
         sleep 0.3
         expect(URI.parse(page.current_url).fragment).to eq "/posts/test-post/"
       end
