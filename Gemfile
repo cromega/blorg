@@ -16,7 +16,7 @@ group :test do
   gem "sinatra"
   gem "capybara"
   gem "pry-nav"
-  gem "apparition", "~> 0.1.0"
+  gem "apparition", "~> 0.4.0"
 end
 
 # If you have any plugins, put them here!
