@@ -26,8 +26,8 @@ url: "https://alphaandcromega.sublimia.nl" # the base hostname & protocol for yo
 # Build settings
 markdown: redcarpet
 #theme: minima
-plugins:
-  - jekyll-feed
+#plugins:
+  #- jekyll-feed
 timezone: Europe/London
 excerpt_separator: "<!-- more -->"
 
