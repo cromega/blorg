@@ -8,6 +8,8 @@ tags: [geek]
 
 This is not a copy and paste into terminal solution. There are some moving parts, some manual steps and you may have to customise some of this stuff to make it suit your needs.
 
+<!-- more -->
+
 ## The circumstances:
 
 * 64-bit OS
@@ -25,9 +27,16 @@ In order to get it to work we need the following:
 
 ## Wine
 
-```sh
-sudo apt-get install winehq-stable
+On my 18.04 based system Wine 3.0 seems to be the latest stable version, which may actually work flawlessy for EZD. I added the winehq repository to have access to Wine 4.0. You also need some extra packages for compiling DLLs.
 
+Install the following packages:
+
+* If using standard wine packages: `wine-stable wine64-tools`
+* If using winehq: `winehq-stable libwine-dev`
+
+Create a Wine environment if you don't have one already
+
+```sh
 # create a wine cellar (seriously, it's called a wine cellar)
 winecfg # you can close it straight away
 
