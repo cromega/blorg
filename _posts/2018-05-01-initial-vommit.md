@@ -1,13 +1,9 @@
 ---
 author: cromega
-layout: json
+layout: post
 title: Initial vommit
 date: Tue May 01 08:18:10 UTC 2018
-permalink: /posts/initial-vommit/
-feed_link: "#/posts/initial-vommit/"
 tags: [stuff]
-category: dev
-live: true
 ---
 
 ## My god, it's full of letters.

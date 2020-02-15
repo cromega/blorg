@@ -2,12 +2,7 @@
 <html>
   <head>
     <title>The α and the cromega</title>
-    {% include templates.html %}
-    <script type="text/javascript" src="/js/umbrella-3.1.0.min.js"></script>
-    <script type="text/javascript" src="/js/handlebars.min.js"></script>
-    <script type="text/javascript" src="/js/blorg.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
 
     <meta property="og:title" content="The α and the cromega" />
     <meta property="og:description" content="And on the edge of sanity... I stumble and fall. - The somewhat curious but mostly perverse adventures of cromega, the cloud shepherd." />
@@ -16,11 +11,15 @@
   <body>
     {% include header.html %}
 
-    <div id="content">{{content}}</div>
-    <div id="sidebar">{% include sidebar.html %}</div>
+    <div id="content">
+      {{ content }}
+    </div>
+
+    {% include sidebar.html %}
     <div class="clearer"></div>
 
     {% include footer.html %}
   </body>
 </html>
+
 

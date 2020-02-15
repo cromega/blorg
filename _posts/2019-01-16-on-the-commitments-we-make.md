@@ -1,11 +1,9 @@
 ---
 author: cromega
-layout: json
+layout: post
 title: On the commitments we make
 date: Wed Jan 16 18:10:47 UTC 2019
-permalink: /posts/on-the-commitments-we-make/
 tags: [geek]
-category: dev
 ---
 
 We all know that naming things can be a tough nut to crack. There are many

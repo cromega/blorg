@@ -1,11 +1,8 @@
 ---
 author: cromega
-layout: json
+layout: post
 title: Go Go modules
-permalink: /posts/go-go-modules/
-feed_link: "#/posts/go-go-modules/"
 tags: [geek]
-category: dev
 ---
 
 ## Ever wanted to set GOPATH on fire? Now you can.

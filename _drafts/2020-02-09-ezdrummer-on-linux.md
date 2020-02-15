@@ -1,11 +1,9 @@
 ---
 author: cromega
-layout: json
+layout: post
 title: ezdrummer 2 on linux
 date: Sun Feb 09 14:25:12 UTC 2020
-permalink: /posts/ezdrummer-2-on-linux/
 tags: [geek]
-category: dev
 ---
 
 This is not a copy and paste into terminal solution. There are some moving parts, some manual steps and you may have to customise some of this stuff to make it suit your needs.

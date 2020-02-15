@@ -1,12 +1,9 @@
 ---
 author: cromega
-layout: json
+layout: post
 title: AWS poetry
 date: Tue Oct 30 10:06:03 UTC 2018
-permalink: /posts/aws-poetry/
-feed_link: "#/posts/aws-poetry/"
 tags: [geek]
-category: dev
 ---
 
 ## Art appreciation minutes!

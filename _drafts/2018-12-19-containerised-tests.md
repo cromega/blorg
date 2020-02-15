@@ -1,11 +1,9 @@
 ---
 author: cromega
-layout: json
+layout: post
 title: containerised tests
 date: Wed Dec 19 17:13:32 UTC 2018
-permalink: /posts/containerised-tests/
 tags: [geek]
-category: dev
 ---
 
 I know that mocking is good, mocking is great but mocking also sucks so I try not to overdo it. If an operation doesn't take a long time and it has consistent results (eg: writing to a file), I usually don't mock it.

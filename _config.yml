@@ -21,19 +21,26 @@ title: The α and the cromega
 email: crome@moronia.hu
 description: This is where I rant about things.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://alphaandcromega.sublimia.nl" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://alphaandthecromega.sublimia.nl" # the base hostname & protocol for your site, e.g. http://example.com
+permalink: /:categories/:year/:month/:day/:title
+
+liquid:
+  error_mode: strict
+  strict_filters: true
+  strict_variables: true
 
 # Build settings
-markdown: redcarpet
-#theme: minima
-#plugins:
-  #- jekyll-feed
+markdown: kramdown
 timezone: Europe/London
 excerpt_separator: "<!-- more -->"
 
 sass:
   style: compact
 
+collections:
+  about_pages:
+    output: true
+    permalink: /about/:name
 
 exclude:
 - bin

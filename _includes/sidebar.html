@@ -1,12 +1,26 @@
-<div class="sidebar-header">
-  about
-</div>
+<div id="sidebar">
+  <div class="sidebar-header">
+    about
+  </div>
 
-<div class="sidebar-items">
-  <ul>
-    <li>⤷{% include _postlink.html link="the author" url="/about-author/" %}</li>
-    <li>⤷{% include _postlink.html link="the blog" url="/about-blog/" %}</li>
-  </ul>
-</div>
+  <div class="sidebar-items">
+    <ul>
+      <li>⤷<a href="/about/author">the author</a></li>
+      <li>⤷<a href="/about/blog">the blog</a></li>
+    </ul>
+  </div>
 
-<div id="sidebar_post_links"></div>
+  <div class="sidebar-header">
+    posts
+  </div>
+
+  <div class="sidebar-items">
+    <ul>
+      {% for post in site.posts %}
+      <li>
+        ⤷<a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

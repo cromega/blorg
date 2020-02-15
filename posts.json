@@ -1,5 +1,0 @@
----
-permalink: posts.json
----
-
-{{ site.posts | where_exp:"item", "item.type <> 'page'" | build_posts | jsonify }}

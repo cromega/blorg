@@ -1,0 +1,25 @@
+---
+layout: main
+---
+
+<div class="post">
+  <div class="title">{{ page.title }}</div>
+
+  <div class="tags">
+    <ul>
+    {% for tag in page.tags %}
+      <li>{{ tag }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="clearer"></div>
+
+  <div class="post-metadata">
+    by <span class="author">{{ page.author }}</span>,
+    <span class="date">{{ page.date }}</span>
+  </div>
+
+  <div class="body">
+    {{ content }}
+  </div>
+</div>

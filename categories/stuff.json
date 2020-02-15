@@ -1,5 +1,0 @@
----
-permalink: /categories/stuff.json
----
-
-{{ site.posts | where_exp:"item", "item.category == 'stuff'" | build_posts | jsonify }}

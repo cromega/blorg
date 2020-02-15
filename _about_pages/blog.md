@@ -1,10 +1,7 @@
 ---
 author: cromega
-layout: json
+layout: post
 title: "The blog"
-permalink: /about-blog/
-type: page
-feed: false
 ---
 
 This blog is based on a horrible idea. Multiple horrible ideas, to be precise.
