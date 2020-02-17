@@ -9,14 +9,11 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll", "~> 4.0"
-gem "redcarpet"
 
 group :test do
   gem "rspec"
-  gem "sinatra"
   gem "capybara"
   gem "pry-nav"
-  gem "apparition", "~> 0.4.0"
 end
 
 # If you have any plugins, put them here!
