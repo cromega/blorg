@@ -2,11 +2,10 @@ FROM alpine:latest
 
 RUN apk update && \
     apk add nginx && \
-    mkdir -p /run/nginx && \
-    rm /etc/nginx/conf.d/default.conf
+    mkdir -p /run/nginx
 
-COPY _site/ /var/www/
-COPY nginx.conf /etc/nginx/conf.d/blog.conf
+COPY _site/ /var/www/localhost/htdocs/
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
 

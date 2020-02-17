@@ -13,6 +13,7 @@ gem "jekyll", "~> 4.0"
 group :test do
   gem "rspec"
   gem "capybara"
+  gem "docker-api"
   gem "pry-nav"
 end
 
