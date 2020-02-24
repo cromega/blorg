@@ -1,27 +1,20 @@
-resource_types:
-- name: sublimia-deployer
-  type: docker-image
-  source:
-    repository: cromega/sublimia-concourse-deploy
-    tag: latest
-
 resources:
 - name: blog
   type: git
   source:
     uri: git@github.com:cromega/blorg
-    private_key: {{blorg-deploy-key}}
+    private_key: {{deploy-key}}
     submodules: all
 - name: blog-deps
   type: git
   source:
     uri: git@github.com:cromega/blorg
-    private_key: {{blorg-deploy-key}}
+    private_key: {{deploy-key}}
     paths: [Gemfile.lock, Dockerfile.ci]
 - name: ci-image
   type: docker-image
   source:
-    repository: cromega/blog-builder
+    repository: cromega/blog-ci
     username: cromega
     password: {{dockerhub-password}}
 - name: image
@@ -30,12 +23,6 @@ resources:
     repository: cromega/blog
     username: cromega
     password: {{dockerhub-password}}
-- name: deployer
-  type: sublimia-deployer
-  source:
-    host: master.sublimia.nl
-    port: 6678
-    private_key: {{deployer-private-key}}
 
 jobs:
 - name: ci-image
@@ -57,22 +44,3 @@ jobs:
   - put: image
     params:
       build: blog-rendered/
-- name: preview
-  plan:
-  - get: blog
-    trigger: true
-    passed: [build]
-  - put: deployer
-    params:
-      image: cromega/blog
-      service: test-alphaandcromega
-      service_opts: blog/ci/service.opts
-- name: live
-  plan:
-  - get: blog
-    passed: [preview]
-  - put: deployer
-    params:
-      image: cromega/blog
-      service: alphaandcromega
-      service_opts: blog/ci/service.opts
