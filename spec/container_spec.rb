@@ -10,7 +10,7 @@ describe "Blorg container" do
       ExposedPorts: { '80/tcp' => {} },
       HostConfig: {
         PortBindings: {
-          '80/tcp' => [{HostPort: '8080'}]
+          '80/tcp' => [{HostPort: '3456'}]
         }
       }
     }
@@ -24,7 +24,7 @@ describe "Blorg container" do
   end
 
   it "serves the content via HTTP" do
-    response = Net::HTTP.get_response(URI('http://localhost:8080'))
+    response = Net::HTTP.get_response(URI('http://localhost:3456'))
     expect(response).to be_a Net::HTTPSuccess
     expect(response.body).to have_content "The α and the cromega"
   end
