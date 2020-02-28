@@ -7,7 +7,6 @@ spec:
   - host: alphaandthecromega.platform.sublimia.nl
     http:
       paths:
-      - path: /
-        backend:
+      - backend:
           serviceName: blog
           servicePort: 80
