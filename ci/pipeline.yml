@@ -29,7 +29,7 @@ resources:
   type: s3
   source:
     bucket: sublimia-ci-bucket-platform
-    versioned_file: k3s.yaml
+    versioned_file: k3s.yml
     access_key_id: {{ci-access-key-id}}
     secret_access_key: {{ci-secret-access-key}}
     region_name: eu-west-1
@@ -65,7 +65,7 @@ jobs:
     params:
       kubectl: apply -f ci/k8s/deployment.yml -f ci/k8s/service.yml -f ci/k8s/ingress.yml
       namespace: sublimia
-      kubeconfig_file: kubeconfig/k3s.yaml
+      kubeconfig_file: kubeconfig/k3s.yml
   - put: kube
     params:
       kubectl: patch deploy blog -p '{"spec":{"template":{"metadata":{"labels":{"updated_at":"'$(date +%s)'"}}}}}'
