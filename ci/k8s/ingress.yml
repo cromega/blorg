@@ -10,4 +10,4 @@ spec:
       - path: /
         backend:
           serviceName: blog
-          servicePort: 8000
+          servicePort: 80
