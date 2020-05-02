@@ -40,7 +40,7 @@ jobs:
   - get: blog
     trigger: true
   - task: build
-    file: blog/ci/build.yml
+    file: blog/.ci/build.yml
   - put: image
     params:
       build: build-output/

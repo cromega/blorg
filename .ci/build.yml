@@ -13,4 +13,4 @@ outputs:
 - name: build-output
 
 run:
-  path: blog/ci/build.sh
+  path: blog/.ci/build.sh
