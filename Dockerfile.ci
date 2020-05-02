@@ -1,7 +1,5 @@
-FROM ruby:2.7-slim
+FROM ruby:2.7
 
 COPY Gemfile* /
 
-RUN apt-get update && \
-    apt-get -y install build-essential git && \
-    bundle install
+RUN bundle instal
