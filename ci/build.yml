@@ -10,7 +10,7 @@ inputs:
 - name: blog
 
 outputs:
-- name: blog-rendered
+- name: build-output
 
 run:
   path: blog/ci/build.sh

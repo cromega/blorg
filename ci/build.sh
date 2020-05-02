@@ -3,4 +3,4 @@
 cd blog
 bundle exec jekyll build
 
-cp -r . ../blog-rendered/
+cp -r . ../build-output/
