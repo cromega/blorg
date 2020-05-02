@@ -3,4 +3,6 @@
 cd blog
 bundle exec jekyll build
 
-cp -r . ../build-output/
+cp -r _site ../build-output/
+cp nginx.conf ../build-output/
+cp Dockerfile ../build-output/
