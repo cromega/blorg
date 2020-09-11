@@ -3,11 +3,17 @@ name: DockerImage
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - Dockerfile.deps
+      - Gemfile*
+      - .github/workflows/deps_docker_image.yml
+  repository_dispatch:
+    types: [remote, "deps_updated"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ruby:2.7.1
+    container: cromega/blorg-deps:latest
     steps:
       - name: Check out
         uses: actions/checkout@v2

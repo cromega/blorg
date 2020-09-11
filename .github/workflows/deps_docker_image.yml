@@ -1,0 +1,32 @@
+name: DepsDockerImage
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - Dockerfile.deps
+      - Gemfile*
+      - .github/workflows/deps_docker_image.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+      - name: Docker login
+        env:
+          DOCKERHUB_PW: ${{ secrets.dockerhub_password }}
+        run: echo "$DOCKERHUB_PW" | docker login -u cromega --password-stdin
+      - name: Build image
+        run: |
+          docker build -t cromega/blorg-deps -f Dockerfile.deps .
+          docker push cromega/blorg-deps
+      - name: Trigger deployment
+        env:
+          TOKEN: ${{ secrets.repo_token }}
+        run: |
+          curl -X POST \
+            -H "Authorization: token $TOKEN" \
+            https://api.github.com/repos/cromega/blorg/dispatches \
+            --data '{"event_type":"deps_updated"}'

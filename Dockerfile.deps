@@ -1,0 +1,13 @@
+FROM ruby:2.7.1 as builder
+
+COPY Gemfile* /
+
+RUN bundle config --local without test && \
+    bundle install --jobs 4 && \
+    find /usr/local/bundle -name "*.c" -delete && \
+    find /usr/local/bundle -name "*.o" -delete && \
+    find /usr/local/bundle -name "*.gem" -delete
+
+FROM ruby:2.7.1-slim
+
+COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
