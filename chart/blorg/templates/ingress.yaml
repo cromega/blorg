@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: blorg
+  labels:
+    app: blorg
+spec:
+  rules:
+  - host: {{ .Values.url }}
+    http:
+      paths:
+      - backend:
+          serviceName: blorg
+          servicePort: 80

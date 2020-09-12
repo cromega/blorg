@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blorg
+  labels:
+    app: blorg
+spec:
+  selector:
+    app: blorg
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000

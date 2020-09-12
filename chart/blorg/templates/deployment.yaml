@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blorg
+  labels:
+    app: blorg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blorg
+  template:
+    metadata:
+      labels:
+        app: blorg
+      annotations:
+        deployedAt: "{{ date "20060102150405" .Release.Time }}"
+    spec:
+      containers:
+        - name: app
+          image: cromega/blorg:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: 64Mi
+            limits:
+              memory: 64Mi
